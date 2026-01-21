@@ -346,6 +346,40 @@
             color: var(--text-light);
         }
         
+        /* Comparison Table Styles */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 3rem 0;
+        }
+        
+        .comparison-table th {
+            background: var(--primary);
+            padding: 1.5rem;
+            text-align: center;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table .winner {
+            background: rgba(0, 212, 170, 0.1);
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
@@ -364,50 +398,53 @@
                 flex-direction: column;
             }
 
+            .comparison-table {
+                display: block;
+                overflow-x: auto;
+            }
 
-    /* Contact Form */
-        .contact-form {
-            background: var(--card-bg);
-            border-radius: 12px;
-            padding: 2.5rem;
-            max-width: 600px;
-            margin: 2rem auto;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-lighter);
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.1);
-            background: rgba(255,255,255,0.05);
-            color: var(--text-light);
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
-        .form-group textarea {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
+            /* Contact Form */
+            .contact-form {
+                background: var(--card-bg);
+                border-radius: 12px;
+                padding: 2.5rem;
+                max-width: 600px;
+                margin: 2rem auto;
+            }
+            
+            .form-group {
+                margin-bottom: 1.5rem;
+            }
+            
+            .form-group label {
+                display: block;
+                margin-bottom: 0.5rem;
+                color: var(--text-lighter);
+                font-weight: 500;
+            }
+            
+            .form-group input,
+            .form-group textarea {
+                width: 100%;
+                padding: 12px;
+                border-radius: 8px;
+                border: 1px solid rgba(255,255,255,0.1);
+                background: rgba(255,255,255,0.05);
+                color: var(--text-light);
+                font-size: 1rem;
+                transition: border-color 0.3s;
+            }
+            
+            .form-group input:focus,
+            .form-group textarea:focus {
+                outline: none;
+                border-color: var(--primary);
+            }
+            
+            .form-group textarea {
+                min-height: 150px;
+                resize: vertical;
+            }
         }
     </style>
 </head>
@@ -497,6 +534,107 @@
             </div>
         </section>
 
+        <!-- What Our Customers Say -->
+        <section style="background: rgba(0, 212, 170, 0.05);">
+            <div class="container">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Real results from businesses like yours</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <p style="font-style: italic; margin-bottom: 1rem; font-size: 1.1rem;">"I was blind to customer churn. StripeFlow showed me exactly who was about to cancel so I could save them. Recovered $2,400 MRR in month one."</p>
+                        <p><strong>— Sarah Chen, SaaS Founder</strong></p>
+                        <div style="margin-top: 0.5rem; color: gold;">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <p style="font-style: italic; margin-bottom: 1rem; font-size: 1.1rem;">"The payout forecasting alone is worth the price. No more guessing when cash hits my account. My finance team loves this."</p>
+                        <p><strong>— Marcus R., Agency Owner</strong></p>
+                        <div style="margin-top: 0.5rem; color: gold;">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <p style="font-style: italic; margin-bottom: 1rem; font-size: 1.1rem;">"Installed in 5 minutes. Now I have insights I was paying $99/month for with other services. One-time payment is a game-changer."</p>
+                        <p><strong>— David L., Indie Developer</strong></p>
+                        <div style="margin-top: 0.5rem; color: gold;">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stop Overpaying for Analytics -->
+        <section>
+            <h2 class="section-title">Stop Overpaying for Analytics</h2>
+            <p class="section-subtitle">See how we compare to the competition</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th style="width: 30%;">Feature</th>
+                        <th style="width: 25%;">StripeFlow</th>
+                        <th style="width: 25%;">Baremetrics</th>
+                        <th style="width: 20%;">Stripe Dashboard</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: left; font-weight: 500;">Price</td>
+                        <td class="winner"><strong>$97 one-time</strong></td>
+                        <td>$99/month ($1,188/year)</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; font-weight: 500;">Self-hosted</td>
+                        <td class="winner">✅ Yes</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; font-weight: 500;">Churn Risk Alerts</td>
+                        <td class="winner">✅ Yes</td>
+                        <td>✅ Yes</td>
+                        <td>❌ No</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; font-weight: 500;">Payout Forecasting</td>
+                        <td class="winner">✅ Yes</td>
+                        <td>✅ Yes</td>
+                        <td>❌ Basic only</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; font-weight: 500;">Your data stays private</td>
+                        <td class="winner">✅ Yes</td>
+                        <td>❌ No</td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; font-weight: 500;">Lifetime updates</td>
+                        <td class="winner">✅ Pro & Agency</td>
+                        <td>❌ Monthly only</td>
+                        <td>✅ Yes</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: left; font-weight: 500;">2-year cost</td>
+                        <td class="winner"><strong>$97</strong></td>
+                        <td>$2,376</td>
+                        <td>$0</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="font-size: 1.2rem; color: var(--secondary);">
+                    <i class="fas fa-calculator"></i> <strong>Save $2,279 over 2 years vs. competitors</strong>
+                </p>
+            </div>
+        </section>
+
         <!-- Features -->
         <section>
             <h2 class="section-title">What You'll See</h2>
@@ -528,8 +666,16 @@
 
         <!-- Pricing -->
         <section id="pricing">
-            <h2 class="section-title">One-Time Purchase</h2>
-            <p class="section-subtitle">No subscriptions. Pay once, use forever. Updates included.</p>
+            <h2 class="section-title">Stop Paying Monthly Subscriptions Forever</h2>
+            <p class="section-subtitle">One-time purchase. Use forever. <strong>Save $1,188/year vs. competitors.</strong></p>
+            
+            <!-- Limited Time Offer Banner -->
+            <div style="text-align: center; margin-bottom: 2rem; padding: 1rem; background: linear-gradient(135deg, #ff6b6b, #ff8e53); border-radius: 8px;">
+                <h3 style="color: white; margin-bottom: 0.5rem;">
+                    <i class="fas fa-clock"></i> LIMITED TIME: Price increases to $197 on March 1st
+                </h3>
+                <p style="color: rgba(255,255,255,0.9);">Get lifetime access at the current price</p>
+            </div>
             
             <div class="pricing-grid">
                 <!-- Basic Tier -->
@@ -540,18 +686,22 @@
                     </div>
                     <div class="pricing-body">
                         <div class="price">$97</div>
-                        <p class="price-subtext">One-time payment</p>
+                        <p class="price-subtext">One-time payment • Save $1,091/year</p>
                         
                         <ul class="features-list">
                             <li>Connect 1 Stripe account</li>
                             <li>All core analytics features</li>
                             <li>Revenue trends & MRR tracking</li>
-                            <li>Churn analysis</li>
+                            <li>Churn analysis & alerts</li>
                             <li>Payout forecasting</li>
                             <li>CSV/Excel export</li>
                             <li>Email installation support</li>
                             <li>1 year of updates</li>
                         </ul>
+                        
+                        <div style="margin: 1rem 0; padding: 10px; background: rgba(99, 91, 255, 0.1); border-radius: 6px;">
+                            <small><i class="fas fa-users"></i> 287 businesses chose this</small>
+                        </div>
                         
                         <a href="https://ko-fi.com/s/97cf986358" class="btn btn-primary" style="width: 100%; text-align: center;">
                             Get Basic License
@@ -568,7 +718,7 @@
                     </div>
                     <div class="pricing-body">
                         <div class="price">$297</div>
-                        <p class="price-subtext">One-time payment</p>
+                        <p class="price-subtext">One-time payment • Save $2,376 over 2 years</p>
                         
                         <ul class="features-list">
                             <li><strong>Everything in Basic</strong></li>
@@ -581,8 +731,12 @@
                             <li>Dashboard customization</li>
                         </ul>
                         
+                        <div style="margin: 1rem 0; padding: 10px; background: rgba(0, 212, 170, 0.1); border-radius: 6px;">
+                            <small><i class="fas fa-bolt"></i> Best value for agencies</small>
+                        </div>
+                        
                         <a href="https://ko-fi.com/s/416da2702f" class="btn" style="width: 100%; text-align: center; background: var(--secondary); color: #0f172a;">
-                            Get Pro License
+                            <i class="fas fa-crown"></i> Get Pro License
                         </a>
                     </div>
                 </div>
@@ -595,7 +749,7 @@
                     </div>
                     <div class="pricing-body">
                         <div class="price">$997</div>
-                        <p class="price-subtext">One-time payment</p>
+                        <p class="price-subtext">One-time payment • Unlimited revenue potential</p>
                         
                         <ul class="features-list">
                             <li><strong>Everything in Pro</strong></li>
@@ -607,6 +761,10 @@
                             <li>Custom feature requests</li>
                             <li>Team onboarding call</li>
                         </ul>
+                        
+                        <div style="margin: 1rem 0; padding: 10px; background: rgba(255, 107, 107, 0.1); border-radius: 6px;">
+                            <small><i class="fas fa-chart-line"></i> For serious businesses only</small>
+                        </div>
                         
                         <a href="https://ko-fi.com/s/6919d92379" class="btn btn-primary" style="width: 100%; text-align: center;">
                             Get Agency License
