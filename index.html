@@ -26,22 +26,71 @@
     <meta property="twitter:image" content="https://stripeflow.com/demo-preview.jpg">
     
     <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
+    <script>
     {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "StripeFlow Analytics",
-      "description": "Self-hosted Stripe analytics dashboard with revenue tracking, MRR, churn analysis and payout forecasting",
-      "url": "https://stripeflow.com",
-      "applicationCategory": "BusinessApplication",
-      "offers": {
-        "@type": "AggregateOffer",
-        "offerCount": "3",
-        "lowPrice": "97",
-        "highPrice": "997",
-        "priceCurrency": "USD"
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "StripeFlow Analytics",
+  "description": "Self-hosted Stripe analytics dashboard with revenue tracking, MRR, churn analysis and payout forecasting",
+  "url": "https://stripeflow.com",
+  "applicationCategory": "BusinessApplication",
+  "offers": {
+    "@type": "AggregateOffer",
+    "offerCount": "3",
+    "lowPrice": "97",
+    "highPrice": "997",
+    "priceCurrency": "USD",
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Basic License",
+        "price": "97",
+        "priceCurrency": "USD",
+        "description": "For Your Own Business"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro License",
+        "price": "297",
+        "priceCurrency": "USD",
+        "description": "For Freelancers & Agencies"
+      },
+      {
+        "@type": "Offer",
+        "name": "Agency License",
+        "price": "997",
+        "priceCurrency": "USD",
+        "description": "For Resellers & Product Companies",
+        "specialOffer": {
+          "@type": "PriceSpecification",
+          "price": "498",
+          "priceCurrency": "USD",
+          "description": "SPECIAL HALF-PRICE OFFER: 50% discount for detailed feedback",
+          "availability": "https://schema.org/LimitedAvailability",
+          "availabilityStarts": "2026-01-22",
+          "inventoryLevel": {
+            "@type": "QuantitativeValue",
+            "value": "8"
+          },
+          "eligibleQuantity": {
+            "@type": "QuantitativeValue",
+            "maxValue": "8"
+          },
+          "validThrough": "2026-03-01",
+          "eligibleCustomerType": {
+            "@type": "BusinessEntityType",
+            "name": "Business requiring implementation feedback"
+          },
+          "acquirer": {
+            "@type": "Organization",
+            "name": "Kofiklub Sales Team",
+            "url": "https://ko-fi.com/eyedolise"
+          }
+        }
       }
-    }
+    ]
+  }
+}
     </script>
 
     <!-- External Stylesheets -->
