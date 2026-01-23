@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,80 +18,80 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="StripeFlow Analytics | Self-Hosted Stripe Dashboard">
     <meta property="og:description" content="Better analytics than Stripe's dashboard. One-time purchase, self-hosted, connect in 2 minutes.">
-    <meta property="og:image" content="https://stripeflow.com/demo-preview.jpg">
+    <meta property="og:image" content="https://stripeflow.com/analytics.png">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:title" content="StripeFlow Analytics | Stripe Dashboard">
     <meta property="twitter:description" content="Self-hosted Stripe analytics dashboard with revenue tracking, MRR, churn analysis.">
-    <meta property="twitter:image" content="https://stripeflow.com/demo-preview.jpg">
+    <meta property="twitter:image" content="https://stripeflow.com/analytics.png">
     
     <!-- Schema.org JSON-LD -->
-    <script>
+    <script type="application/ld+json">
     {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "StripeFlow Analytics",
-  "description": "Self-hosted Stripe analytics dashboard with revenue tracking, MRR, churn analysis and payout forecasting",
-  "url": "https://stripeflow.com",
-  "applicationCategory": "BusinessApplication",
-  "offers": {
-    "@type": "AggregateOffer",
-    "offerCount": "3",
-    "lowPrice": "97",
-    "highPrice": "997",
-    "priceCurrency": "USD",
-    "offers": [
-      {
-        "@type": "Offer",
-        "name": "Basic License",
-        "price": "97",
-        "priceCurrency": "USD",
-        "description": "For Your Own Business"
-      },
-      {
-        "@type": "Offer",
-        "name": "Pro License",
-        "price": "297",
-        "priceCurrency": "USD",
-        "description": "For Freelancers & Agencies"
-      },
-      {
-        "@type": "Offer",
-        "name": "Agency License",
-        "price": "997",
-        "priceCurrency": "USD",
-        "description": "For Resellers & Product Companies",
-        "specialOffer": {
-          "@type": "PriceSpecification",
-          "price": "498",
-          "priceCurrency": "USD",
-          "description": "SPECIAL HALF-PRICE OFFER: 50% discount for detailed feedback",
-          "availability": "https://schema.org/LimitedAvailability",
-          "availabilityStarts": "2026-01-22",
-          "inventoryLevel": {
-            "@type": "QuantitativeValue",
-            "value": "8"
-          },
-          "eligibleQuantity": {
-            "@type": "QuantitativeValue",
-            "maxValue": "8"
-          },
-          "validThrough": "2026-03-01",
-          "eligibleCustomerType": {
-            "@type": "BusinessEntityType",
-            "name": "Business requiring implementation feedback"
-          },
-          "acquirer": {
-            "@type": "Organization",
-            "name": "Kofiklub Sales Team",
-            "url": "https://ko-fi.com/eyedolise"
-          }
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "StripeFlow Analytics",
+        "description": "Self-hosted Stripe analytics dashboard with revenue tracking, MRR, churn analysis and payout forecasting",
+        "url": "https://stripeflow.com",
+        "applicationCategory": "BusinessApplication",
+        "offers": {
+            "@type": "AggregateOffer",
+            "offerCount": "3",
+            "lowPrice": "97",
+            "highPrice": "997",
+            "priceCurrency": "USD",
+            "offers": [
+                {
+                    "@type": "Offer",
+                    "name": "Basic License",
+                    "price": "97",
+                    "priceCurrency": "USD",
+                    "description": "For Your Own Business"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Pro License",
+                    "price": "297",
+                    "priceCurrency": "USD",
+                    "description": "For Freelancers & Agencies"
+                },
+                {
+                    "@type": "Offer",
+                    "name": "Agency License",
+                    "price": "997",
+                    "priceCurrency": "USD",
+                    "description": "For Resellers & Product Companies",
+                    "specialOffer": {
+                        "@type": "PriceSpecification",
+                        "price": "498",
+                        "priceCurrency": "USD",
+                        "description": "SPECIAL HALF-PRICE OFFER: 50% discount for detailed feedback",
+                        "availability": "https://schema.org/LimitedAvailability",
+                        "availabilityStarts": "2026-01-22",
+                        "inventoryLevel": {
+                            "@type": "QuantitativeValue",
+                            "value": "8"
+                        },
+                        "eligibleQuantity": {
+                            "@type": "QuantitativeValue",
+                            "maxValue": "8"
+                        },
+                        "validThrough": "2026-03-01",
+                        "eligibleCustomerType": {
+                            "@type": "BusinessEntityType",
+                            "name": "Business requiring implementation feedback"
+                        },
+                        "acquirer": {
+                            "@type": "Organization",
+                            "name": "Kofiklub Sales Team",
+                            "url": "https://ko-fi.com/eyedolise"
+                        }
+                    }
+                }
+            ]
         }
-      }
-    ]
-  }
-}
+    }
     </script>
 
     <!-- External Stylesheets -->
@@ -107,6 +108,7 @@
             --text-light: #e2e8f0;
             --text-lighter: #f1f5f9;
             --success: #10b981;
+            --warning: #ffd166;
         }
         
         * {
@@ -351,6 +353,103 @@
             font-weight: bold;
         }
         
+        /* Dashboard Preview Section */
+        .dashboard-preview {
+            background: linear-gradient(135deg, rgba(99, 91, 255, 0.1), rgba(0, 212, 170, 0.1));
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dashboard-preview-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem 1.5rem;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 0;
+        }
+        
+        .preview-controls {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .control-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .preview-url {
+            color: var(--text-light);
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+        
+        .dashboard-image-container {
+            position: relative;
+            background: var(--dark-bg);
+            border-radius: 0 0 12px 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .dashboard-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .dashboard-analysis {
+            margin-top: 2.5rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .analysis-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .analysis-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+        }
+        
+        .analysis-number {
+            background: var(--primary);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .stripe-limitation {
+            background: rgba(255, 107, 107, 0.1);
+            border: 1px solid rgba(255, 107, 107, 0.3);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+        
         /* Demo Preview */
         .demo-preview {
             background: linear-gradient(135deg, rgba(99, 91, 255, 0.1), rgba(0, 212, 170, 0.1));
@@ -429,7 +528,7 @@
             color: var(--secondary);
         }
         
-      /* Contact Form */
+        /* Contact Form */
         .contact-form {
             background: var(--card-bg);
             border-radius: 12px;
@@ -494,10 +593,15 @@
                 display: block;
                 overflow-x: auto;
             }
-
-  
-        
-        
+            
+            .dashboard-preview {
+                padding: 1.5rem;
+            }
+            
+            .analysis-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -551,6 +655,82 @@
                     <h3>When's my next payout?</h3>
                     <p>Unclear cash flow forecasting makes planning difficult.</p>
                 </div>
+            </div>
+        </section>
+
+
+   <!-- Dashboard Preview Section -->
+        <section>
+            <h2 class="section-title">This Is What You're Missing</h2>
+            <p class="section-subtitle">The StripeFlow Dashboard vs. Stripe's Basic Interface</p>
+            
+            <div class="dashboard-preview">
+                <div class="dashboard-preview-header">
+                    <div class="preview-controls">
+                        <div class="control-dot" style="background: #ff5f56;"></div>
+                        <div class="control-dot" style="background: #ffbd2e;"></div>
+                        <div class="control-dot" style="background: #27ca3f;"></div>
+                    </div>
+                    <div class="preview-url">your-business.com/dashboard.stripeflow</div>
+                </div>
+                
+                <div class="dashboard-image-container">
+                    <img src="analytics.png" alt="StripeFlow Analytics Dashboard Preview" class="dashboard-image">
+                </div>
+                
+                <div class="dashboard-analysis">
+                    <h3 style="color: var(--text-lighter); margin-bottom: 1rem;">
+                        <i class="fas fa-search"></i> What This Dashboard Shows You That Stripe Doesn't:
+                    </h3>
+                    
+                    <div class="analysis-grid">
+                        <div class="analysis-item">
+                            <div class="analysis-number">1</div>
+                            <div>
+                                <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">MRR at a Glance</h4>
+                                <p>See $12,540 total revenue immediately. Stripe makes you calculate this manually across multiple reports.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="analysis-item">
+                            <div class="analysis-number">2</div>
+                            <div>
+                                <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Churn Prediction</h4>
+                                <p>5 failed payments flagged immediately. Stripe shows failed payments but no pattern analysis or risk scoring.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="analysis-item">
+                            <div class="analysis-number">3</div>
+                            <div>
+                                <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Customer Health</h4>
+                                <p>48 new vs 120 returning customers analyzed. Stripe just shows customer count, not segmentation or LTV.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="analysis-item">
+                            <div class="analysis-number">4</div>
+                            <div>
+                                <h4 style="color: var(--secondary); margin-bottom: 0.5rem;">Revenue Forecasting</h4>
+                                <p>18% growth trend with monthly breakdown. Stripe shows historical data only, no projections or trends.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stripe-limitation">
+                        <h4 style="color: var(--accent); margin-bottom: 0.5rem;">
+                            <i class="fas fa-exclamation-triangle"></i> The Stripe Limitation:
+                        </h4>
+                        <p>Stripe shows you raw data ($120 refund, 325 subscriptions) but gives zero context. Is 5.2% churn rate good or bad? Is $7,920 MRR growing or shrinking? StripeFlow connects the dots and tells you what the numbers <em>actually mean</em> for your business.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="font-size: 1.2rem; color: var(--text-light);">
+                    <i class="fas fa-lightbulb" style="color: var(--warning);"></i> 
+                    <strong>This dashboard is built from your exact Stripe data</strong> - it's not a mockup. Connect your API key and see this with your numbers in 2 minutes.
+                </p>
             </div>
         </section>
 
