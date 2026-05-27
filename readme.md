@@ -574,6 +574,6 @@ Remember: Always test with a Stripe test key (sk_test_...) before using your liv
 
 ---
 
-Last Updated: [Date]
-Version: 1.0.0
-Need more help? Email: support@stripeflow.com
+Last Updated: 09 08 25
+Version: 1.8.0
+Need more help? Email: nlcgpt1@gmail.com
